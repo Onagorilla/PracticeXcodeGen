@@ -1,0 +1,24 @@
+name: TEST_XCodeGen
+options:
+  bundleIdPrefix: "com.TEST-XCodeGen"
+targets:
+  TEST_XCodeGen:
+    type: application
+    platform: iOS
+    sources:
+      - path: TEST_XCodeGen
+    scheme:
+      testTargets:
+        - TEST_XCodeGenTests
+    settings:
+        configs:
+            debug:
+                SWIFT_VERSION: 5.0
+            release:
+                SWIFT_VERSION: 5.0
+  TEST_XCodeGenTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: TEST_XCodeGenTests
+    dependencies:
+      - target: TEST_XCodeGen
